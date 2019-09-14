@@ -12,10 +12,11 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-color: #87CEFA;
+                color: #191970;
                 font-family: 'Nunito', sans-serif;
-                font-weight: 200;
+                font-weight: bold ;
+                font-style: bold ;
                 height: 100vh;
                 margin: 0;
             }
@@ -49,10 +50,10 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #000000;
                 padding: 0 25px;
                 font-size: 13px;
-                font-weight: 600;
+                font-weight: bold ;
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
@@ -91,6 +92,7 @@
                     <a href="https://blog.laravel.com">Blog</a>
                     <a href="https://nova.laravel.com">Nova</a>
                     <a href="https://forge.laravel.com">Forge</a>
+                    <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>

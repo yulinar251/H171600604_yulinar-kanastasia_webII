@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -25,4 +25,16 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+
+    public function myCaptcha()
+    {
+        return view('myCaptcha');
+    }
+
+    public function refreshCaptcha()
+    {
+        return response()->json(['captcha'=> captcha_img()]);
+    }
+ 
 }
