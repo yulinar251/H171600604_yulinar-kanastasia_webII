@@ -9,8 +9,8 @@ class ArtikelController extends Controller
 {
      public function index()
     {
-        $artikel=artikel::all();
+        $listArtikel=Artikel::all();
         
-        return view('artikel.index',compact('artikel'));
+        return view('artikel.index',compact('listArtikel'));
     }
 }

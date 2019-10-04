@@ -40,7 +40,7 @@ class LoginController extends Controller
     }
 
 
-    public function refreshCaptcha()
+   public function refreshCaptcha()
     {
         return response()->json(['captcha'=> captcha_img()]);
     }
@@ -55,9 +55,6 @@ class LoginController extends Controller
      */
     protected $redirectTo = '/home';
    
-
-
-    
     
     /**
      * Create a new controller instance.
