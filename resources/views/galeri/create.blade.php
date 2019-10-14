@@ -5,11 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Tambah Artikel</div>
+                <center><div class="card-header bg-primary"><b>Tambah Galeri</div></center>
+                 <div class="background-color bg-info">
 
                 <div class="card-body">
-                	<form method="post" action="{!! route('artikel.store') !!}">
-                		@include('artikel.form')
+                	<form method="post" action="{!! route('galeri.store') !!}">
+                		@include('galeri.form')
                 	</form>
                 </div>
             </div>

@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header">kategori Berita</div>
+                <center><div class="card-header bg-info"><b>Kategori Berita</div></center>
                 <div class="card-body">
                     
                 <table class="table table-bordered">
@@ -15,6 +15,7 @@
                         <th scope="col">Nama</th>
                         <th scope="col">User_id</th>
                         <th scope="col">Create</th>
+                        <th scope="col">Update</th>
                         <th scope="col">Aksi</th>
                         </tr>
                     </thead>
@@ -26,15 +27,26 @@
                         <td>{!! $item->nama !!}</td>
                         <td>{!! $item->users_id !!}</td>
                         <td>{!! $item->created_at->format('d/m/Y H:i:s')!!}</td>
+                        <td>{!! $item->updated_at->format('d/m/Y H:i:s')!!}</td>
                         <td>
-                         <a href="{!! route('kategori_berita.show',[$item->id]) !!}">Detail</a>
+                        <a href="{!! route('kategori_berita.show',[$item->id]) !!}" class="btn btn-sm btn-success">Detail</a>
+                        
+                        <a href="{!! route('kategori_berita.edit',[$item->id]) !!}" class="btn btn-sm btn-warning"><b>Edit</a>
+                        
+
+                        {!! Form::open(['route'=>['kategori_berita.destroy',$item->id],'method'=>'delete']) !!}
+
+                        {!! Form::submit('Hapus', ['class'=>'btn btn-sm btn-danger','onclick'=>"return confirm ('Yakin menghapus data ini ?')"]); !!}
+
+                        {!! Form::close() !!}
+
                         </td>
                         </tr>
-                       @endforeach-
+                       @endforeach
                     </tbody>
                 </table>
                     <td>
-                        <a href="{!! route('kategori_berita.create') !!}" class="btn btn-primary">Tambah Data</a>
+                        <a href="{!! route('kategori_berita.create') !!}" class="btn btn-warning"><b>Tambah Data</a>
                     </td>
             </div>
         </div>

@@ -5,37 +5,55 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">List Pengumuman</div>
+                <center><div class="card-header bg-info text-center"><b>List Pengumuman</div></center>
                 <div class="card-body">
-                
+                   <td>
+                    <a href="{!! route('pengumuman.index') !!}" class="btn btn-warning">Data Not Deleted</a>
+                    <a href="{!! route('pengumuman.trash') !!}" class="btn btn-danger">See Deleted Data</a>
+                    </td>
                 <table class="table table-bordered">
-                    <thead class="bg-primary">
+                    <thead class="bg-primary text-center">
                         <tr>
-                        <th scope="col">Id</th>
+                        <th scope="col">ID</th>
                         <th scope="col">Judul</th>
                         <th scope="col">Isi</th>
-                        <th scope="col">User_id</th>
+                        <th scope="col">Kategori</th>
+                        <th scope="col">Users Id</th>
                         <th scope="col">Create</th>
-                        <th scope="col">Kategori Id</th>
+                        <th scope="col">Update</th>
                         <th scope="col">Aksi</th>
-
                         </tr>
                     </thead>
                     <tbody>
+
                         @foreach( $listPengumuman as $item)
                         <tr>
                         <td>{!! $item->id !!}</td>
                         <td>{!! $item->judul !!}</td>
                         <td>{!! $item->isi !!}</td>
-                        <td>{!! $item->users_id !!}</td>
-                        <td>{!! $item->created_at !!}</td>
                         <td>{!! $item->kategori_pengumuman_id !!}</td>
+                        <td>{!! $item->users_id !!}</td>
+                        <td>{!! $item->created_at->format('d/m/Y H:i:s') !!}</td>
+                        <td>{!! $item->updated_at->format('d/m/Y H:i:s') !!}</td>
                         <td>
-                         <a href="{!! route('pengumuman.show',[$item->id]) !!}">Detail</a>
+                        <a href="{!! route('pengumuman.show',[$item->id]) !!}" class="btn btn-sm btn-success">Detail</a>
+                        <a href="{!! route('pengumuman.edit',[$item->id]) !!}" class="btn btn-sm btn-warning"><b>Edit</a>
+
+                        {!! Form::open(['route'=>['pengumuman.destroy',$item->id],'method'=>'delete']) !!}
+
+                        {!! Form::submit('Hapus', ['class'=>'btn btn-sm btn-danger','onclick'=>"return confirm ('Anda Yakin Menghapus Data ini ?')"]); !!}
+
+                        {!! Form::close() !!}
+
                         </td>
                         </tr>
-                        @endforeach
+                       @endforeach
                     </tbody>
                 </table>
-                <a href="{!! route('pengumuman.create') !!}" class="btn btn-primary">Tambah Data</a>
-        @endsection
+                 <a href="{!! route('pengumuman.create') !!}" class="btn btn-warning">Tambah Data</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+@endsection

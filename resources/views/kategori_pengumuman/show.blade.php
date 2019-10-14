@@ -5,7 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Kategori Pengumuman</div>
+                <center><div class="card-header bg-primary"><b>Kategori Pengumuman</div></center>
+                <div class="background-color bg-info">
                 
                 <div class="card-body">
                         <div class="form-group row">
@@ -36,7 +37,7 @@
 
                     <div class="form-group row mb-0">
                         <div class="col-md-6 offset-md-4">
-                            <a href="{!! route('kategori_pengumuman.index')!!}" class="btn btn-primary">
+                            <a href="{!! route('kategori_pengumuman.index')!!}" class="btn btn-danger">
                                 Back
                             </a>
                         </div>

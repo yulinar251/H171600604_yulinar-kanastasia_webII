@@ -5,25 +5,28 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Tambah Berita</div>
+                <center><div class="card-header bg-primary"><b>Tambah Berita</div><center>
+                <div class="background-color bg-info">
 
                 <div class="card-body">
-                	<form method="post" action="{!! route('berita.store') !!}">
-                		@include('berita.form')
-                	</form>
+                    <form method="post" action="{!! route('berita.store') !!}">
+                        @include('berita.form')
+                    </form>
                 </div>
             </div>
         </div>
      </div>
 @endsection
 
+
 @section('scripts')
-<script src="https://cdn.ckeditor.com/4.13.0/full/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/4.13.0/full/ckeditor.js"></script>
 
-<script>
-$(document).ready(function(){
-        CKEDITOR.replace( 'isi');
-});
+        <script>
+                $(document).ready(function() {
+                 CKEDITOR.replace( 'isi' );
 
-</script>
 
+                });
+        </script>
+@endsection

@@ -14,9 +14,9 @@
             html, body {
                 background-color: #87CEFA;
                 color: #191970;
-                font-family: 'Nunito', sans-serif;
+                font-family: 'Nunito', arial;
                 font-weight: bold ;
-                font-style: bold ;
+                font-style: italic; ;
                 height: 100vh;
                 margin: 0;
             }
